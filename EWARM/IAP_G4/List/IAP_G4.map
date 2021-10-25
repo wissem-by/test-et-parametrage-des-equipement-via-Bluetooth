@@ -1,0 +1,418 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.2.214/W32 for ARM                  29/Sep/2021  01:54:38
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Exe\IAP_G4.out
+#    Map file     =
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\List\IAP_G4.map
+#    Command line =
+#        -f C:\Users\User\AppData\Local\Temp\EWBFA7.tmp
+#        (C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\flash.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\flashLoader.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\led.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\lineCoder.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\machine.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\main.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\sim908.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\startup_stm32g431xx.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\stm32g4xx_hal.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\stm32g4xx_hal_flash.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\stm32g4xx_hal_flash_ex.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\stm32g4xx_it.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\stm32g4xx_ll_dma.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\stm32g4xx_ll_exti.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\stm32g4xx_ll_gpio.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\stm32g4xx_ll_pwr.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\stm32g4xx_ll_rcc.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\stm32g4xx_ll_rtc.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\stm32g4xx_ll_usart.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\stm32g4xx_ll_utils.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\system_stm32g4xx.o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj\utiles.o
+#        --redirect _Printf=_PrintfTiny --redirect _Scanf=_ScanfSmallNoMb
+#        --no_out_extension -o
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Exe\IAP_G4.out --map
+#        C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\List\IAP_G4.map
+#        --config
+#        C:\Users\User\Desktop\projet0\wissem\EWARM/stm32g431xx_flash.icf
+#        --entry __iar_program_start --inline --no_exceptions
+#        --merge_duplicate_sections --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x800'0000 { ro section .intvec };
+"P1":  place in [from 0x800'0000 to 0x801'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                       0x1d8
+  .intvec            ro code   0x800'0000   0x1d8  startup_stm32g431xx.o [1]
+                             - 0x800'01d8   0x1d8
+
+"P1":                                      0x2096
+  .text              ro code   0x800'01d8   0xbe8  sim908.o [1]
+  .text              ro code   0x800'0dc0    0x1e  strcat.o [2]
+  .text              ro code   0x800'0dde    0x3a  zero_init3.o [3]
+  .text              ro code   0x800'0e18    0x14  strlen_small.o [3]
+  .text              ro code   0x800'0e2c    0x18  strcpy.o [3]
+  .text              ro code   0x800'0e44    0xe0  flashLoader.o [1]
+  .text              ro code   0x800'0f24    0x2c  strstr.o [2]
+  .text              ro code   0x800'0f50    0x70  led.o [1]
+  .text              ro code   0x800'0fc0    0x12  strcmp.o [3]
+  .text              ro code   0x800'0fd2     0xa  xsprout.o [2]
+  .text              ro code   0x800'0fdc    0x18  ABImemcpy_small.o [3]
+  .text              ro code   0x800'0ff4    0x1e  ABImemmove_small.o [3]
+  .text              ro code   0x800'1014    0x40  sprintf.o [2]
+  .text              ro code   0x800'1054   0x1fc  lineCoder.o [1]
+  .text              ro code   0x800'1250    0x16  strchr.o [3]
+  .text              ro code   0x800'1266   0x134  xprintftiny.o [2]
+  .text              ro code   0x800'139c     0x6  ABImemclr.o [3]
+  .text              ro code   0x800'13a4     0x6  ABImemclr4.o [3]
+  .text              ro code   0x800'13aa    0x6a  utiles.o [1]
+  .text              ro code   0x800'1414    0x1e  strncpy_small.o [3]
+  .text              ro code   0x800'1434   0x4c4  main.o [1]
+  .text              ro code   0x800'18f8    0x3c  flash.o [1]
+  .text              ro code   0x800'1934    0x12  ABImemset_small.o [3]
+  .text              ro code   0x800'1948    0x32  ABImemset48.o [3]
+  .text              ro code   0x800'197c    0xfa  stm32g4xx_ll_gpio.o [1]
+  .text              ro code   0x800'1a78    0xe0  stm32g4xx_ll_usart.o [1]
+  .text              ro code   0x800'1b58    0x9c  stm32g4xx_ll_rtc.o [1]
+  .text              ro code   0x800'1bf4    0x6e  machine.o [1]
+  .text              ro code   0x800'1c64   0x128  stm32g4xx_hal_flash.o [1]
+  .text              ro code   0x800'1d8c    0x28  stm32g4xx_ll_utils.o [1]
+  .text              ro code   0x800'1db4   0x168  stm32g4xx_hal_flash_ex.o [1]
+  .text              ro code   0x800'1f1c   0x1c8  stm32g4xx_ll_rcc.o [1]
+  .text              ro code   0x800'20e4     0xc  stm32g4xx_hal.o [1]
+  .text              ro code   0x800'20f0    0x38  stm32g4xx_it.o [1]
+  .text              ro code   0x800'2128    0x38  packbits_init_single.o [3]
+  .rodata            const     0x800'2160    0x30  stm32g4xx_ll_usart.o [1]
+  .text              ro code   0x800'2190    0x28  data_init.o [3]
+  .iar.init_table    const     0x800'21b8    0x20  - Linker created -
+  .text              ro code   0x800'21d8    0x20  system_stm32g4xx.o [1]
+  .text              ro code   0x800'21f8    0x1e  cmain.o [3]
+  .text              ro code   0x800'2216     0x4  exit.o [2]
+  .text              ro code   0x800'221c     0xa  cexit.o [3]
+  .text              ro code   0x800'2228     0xc  XXexit.o [3]
+  .text              ro code   0x800'2234    0x10  startup_stm32g431xx.o [1]
+  .text              ro code   0x800'2244     0xc  cstartup_M.o [3]
+  .rodata            const     0x800'2250     0x8  system_stm32g4xx.o [1]
+  .text              ro code   0x800'2258     0x4  startup_stm32g431xx.o [1]
+  .rodata            const     0x800'225c     0x0  zero_init3.o [3]
+  .rodata            const     0x800'225c     0x0  packbits_init_single.o [3]
+  Initializer bytes  const     0x800'225c    0x12  <for P2-1>
+                             - 0x800'226e  0x2096
+
+"P2", part 1 of 3:                           0x30
+  P2-1                        0x2000'0000    0x30  <Init block>
+    .data            inited   0x2000'0000     0xc  stm32g4xx_hal.o [1]
+    .data            inited   0x2000'000c    0x20  stm32g4xx_hal_flash.o [1]
+    .data            inited   0x2000'002c     0x4  system_stm32g4xx.o [1]
+                            - 0x2000'0030    0x30
+
+"P2", part 2 of 3:                          0x594
+  .bss               zero     0x2000'0030   0x2cc  main.o [1]
+  .bss               zero     0x2000'02fc   0x200  main.o [1]
+  .bss               zero     0x2000'04fc    0x94  sim908.o [1]
+  .bss               zero     0x2000'0590    0x28  main.o [1]
+  .bss               zero     0x2000'05b8     0x8  main.o [1]
+  .bss               zero     0x2000'05c0     0x2  machine.o [1]
+                            - 0x2000'05c2   0x592
+
+"P2", part 3 of 3:                          0x400
+  CSTACK                      0x2000'05c8   0x400  <Block>
+    CSTACK           uninit   0x2000'05c8   0x400  <Block tail>
+                            - 0x2000'09c8   0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'226e   0x801'ffff  0x1'dd92
+  0x2000'05c4  0x2000'05c7       0x4
+  0x2000'09c8  0x2000'7fff    0x7638
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x592:
+          0x2000'0030  0x592
+
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x12 (37% of destination):
+           0x800'225c   0x12
+    1 destination range, total size 0x30:
+          0x2000'0000   0x30
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                    ro code  ro data  rw data
+    ------                    -------  -------  -------
+command line/config:
+    ---------------------------------------------------
+    Total:
+
+C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj: [1]
+    flash.o                        60
+    flashLoader.o                 224
+    led.o                         112
+    lineCoder.o                   508
+    machine.o                     110                 2
+    main.o                      1'220             1'276
+    sim908.o                    3'048               148
+    startup_stm32g431xx.o         492
+    stm32g4xx_hal.o                12        4       12
+    stm32g4xx_hal_flash.o         296       12       32
+    stm32g4xx_hal_flash_ex.o      360
+    stm32g4xx_it.o                 56
+    stm32g4xx_ll_gpio.o           250
+    stm32g4xx_ll_rcc.o            456
+    stm32g4xx_ll_rtc.o            156
+    stm32g4xx_ll_usart.o          224       48
+    stm32g4xx_ll_utils.o           40
+    system_stm32g4xx.o             32       10        4
+    utiles.o                      106
+    ---------------------------------------------------
+    Total:                      7'762       74    1'474
+
+dl7M_tln.a: [2]
+    exit.o                          4
+    sprintf.o                      64
+    strcat.o                       30
+    strstr.o                       44
+    xprintftiny.o                 308
+    xsprout.o                      10
+    ---------------------------------------------------
+    Total:                        460
+
+rt7M_tl.a: [3]
+    ABImemclr.o                     6
+    ABImemclr4.o                    6
+    ABImemcpy_small.o              24
+    ABImemmove_small.o             30
+    ABImemset48.o                  50
+    ABImemset_small.o              18
+    XXexit.o                       12
+    cexit.o                        10
+    cmain.o                        30
+    cstartup_M.o                   12
+    data_init.o                    40
+    packbits_init_single.o         56
+    strchr.o                       22
+    strcmp.o                       18
+    strcpy.o                       24
+    strlen_small.o                 20
+    strncpy_small.o                30
+    zero_init3.o                   58
+    ---------------------------------------------------
+    Total:                        466
+
+    Gaps                           20
+    Linker created                          32    1'024
+-------------------------------------------------------
+    Grand Total:                8'708      106    2'498
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'21b8          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'21d8          --   Gb  - Linker created -
+?main                    0x800'21f9         Code  Gb  cmain.o [3]
+AHBPrescTable            0x800'21e8   0x10  Data  Gb  system_stm32g4xx.o [1]
+AJAJA_FLASH_Init         0x800'18f9   0x1a  Code  Gb  flash.o [1]
+AJAJA_WriteXWord         0x800'173d   0x32  Code  Gb  main.o [1]
+APBPrescTable            0x800'2250    0x8  Data  Gb  system_stm32g4xx.o [1]
+BusFault_Handler         0x800'20f7    0x2  Code  Gb  stm32g4xx_it.o [1]
+CSTACK$$Base            0x2000'05c8          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'09c8          --   Gb  - Linker created -
+DATA                    0x2000'0510   0x40  Data  Gb  sim908.o [1]
+DebugMon_Handler         0x800'20fd    0x2  Code  Gb  stm32g4xx_it.o [1]
+FLASH_FlushCaches        0x800'1ec1   0x4e  Code  Gb  stm32g4xx_hal_flash_ex.o [1]
+FLASH_G4_ErasePage       0x800'1919   0x1c  Code  Gb  flash.o [1]
+FLASH_MassErase          0x800'1e85   0x18  Code  Lc  stm32g4xx_hal_flash_ex.o [1]
+FLASH_PageErase          0x800'1e9d   0x24  Code  Gb  stm32g4xx_hal_flash_ex.o [1]
+FLASH_Program_DoubleWord
+                         0x800'1d37   0x18  Code  Lc  stm32g4xx_hal_flash.o [1]
+FLASH_Program_Fast       0x800'1d4f   0x26  Code  Lc  stm32g4xx_hal_flash.o [1]
+FLASH_WaitForLastOperation
+                         0x800'1cf1   0x46  Code  Gb  stm32g4xx_hal_flash.o [1]
+HAL_FLASHEx_Erase        0x800'1db5   0xc8  Code  Gb  stm32g4xx_hal_flash_ex.o [1]
+HAL_FLASH_Program        0x800'1c65   0x66  Code  Gb  stm32g4xx_hal_flash.o [1]
+HAL_FLASH_Unlock         0x800'1cd1   0x20  Code  Gb  stm32g4xx_hal_flash.o [1]
+HAL_GetTick              0x800'20e5    0xc  Code  Wk  stm32g4xx_hal.o [1]
+HardFault_Handler        0x800'20f3    0x2  Code  Gb  stm32g4xx_it.o [1]
+LC_build                 0x800'106d  0x168  Code  Gb  lineCoder.o [1]
+LC_save                  0x800'11e1   0x3a  Code  Gb  lineCoder.o [1]
+LED_Routine              0x800'0f8b   0x36  Code  Gb  led.o [1]
+LED_init                 0x800'0f51   0x1c  Code  Gb  led.o [1]
+LED_setDuty              0x800'0f7d    0xe  Code  Gb  led.o [1]
+LED_setStatus            0x800'0f6d   0x10  Code  Gb  led.o [1]
+LL_AHB2_GRP1_EnableClock
+                         0x800'1453    0x6  Code  Lc  main.o [1]
+LL_APB1_GRP1_EnableClock
+                         0x800'1459    0x4  Code  Lc  main.o [1]
+LL_GPIO_Init             0x800'197d   0xb6  Code  Gb  stm32g4xx_ll_gpio.o [1]
+LL_Init1msTick           0x800'1d8d   0x18  Code  Gb  stm32g4xx_ll_utils.o [1]
+LL_RCC_GetUARTClockFreq
+                         0x800'1fc7   0x58  Code  Gb  stm32g4xx_ll_rcc.o [1]
+LL_RCC_GetUSARTClockFreq
+                         0x800'1f1d   0xaa  Code  Gb  stm32g4xx_ll_rcc.o [1]
+LL_RTC_EnterInitMode     0x800'1ba7   0x4a  Code  Gb  stm32g4xx_ll_rtc.o [1]
+LL_RTC_Init              0x800'1b59   0x4e  Code  Gb  stm32g4xx_ll_rtc.o [1]
+LL_SetSystemCoreClock    0x800'1da5    0x6  Code  Gb  stm32g4xx_ll_utils.o [1]
+LL_USART_Init            0x800'1a79   0xc8  Code  Gb  stm32g4xx_ll_usart.o [1]
+MemManage_Handler        0x800'20f5    0x2  Code  Gb  stm32g4xx_it.o [1]
+NMI_Handler              0x800'20f1    0x2  Code  Gb  stm32g4xx_it.o [1]
+PendSV_Handler           0x800'20ff    0x2  Code  Gb  stm32g4xx_it.o [1]
+RCC_GetHCLKClockFreq     0x800'2043    0xc  Code  Gb  stm32g4xx_ll_rcc.o [1]
+RCC_GetPCLK1ClockFreq    0x800'204f    0xa  Code  Gb  stm32g4xx_ll_rcc.o [1]
+RCC_GetPCLK2ClockFreq    0x800'2063    0xc  Code  Gb  stm32g4xx_ll_rcc.o [1]
+RCC_GetSystemClockFreq   0x800'2027   0x1c  Code  Gb  stm32g4xx_ll_rcc.o [1]
+RCC_PLL_GetFreqDomain_SYS
+                         0x800'206f   0x16  Code  Gb  stm32g4xx_ll_rcc.o [1]
+Region$$Table$$Base      0x800'21b8          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'21d8          --   Gb  - Linker created -
+SIM908_FTPCONF_TAB      0x2000'02fc  0x200  Data  Gb  main.o [1]
+SIM908_SETUP_TAB        0x2000'0590   0x28  Data  Gb  main.o [1]
+SIM908_SetupInit         0x800'0b05   0x1c  Code  Gb  sim908.o [1]
+SVC_Handler              0x800'20fb    0x2  Code  Gb  stm32g4xx_it.o [1]
+SysTick_Handler          0x800'2101    0x6  Code  Gb  stm32g4xx_it.o [1]
+SystemClock_Config       0x800'176f   0xf6  Code  Gb  main.o [1]
+SystemCoreClock         0x2000'002c    0x4  Data  Gb  system_stm32g4xx.o [1]
+SystemInit               0x800'21d9    0xa  Code  Gb  system_stm32g4xx.o [1]
+USART3_IRQHandler        0x800'2107   0x1a  Code  Gb  stm32g4xx_it.o [1]
+USART_PRESCALER_TAB      0x800'2160   0x30  Data  Lc  stm32g4xx_ll_usart.o [1]
+UsageFault_Handler       0x800'20f9    0x2  Code  Gb  stm32g4xx_it.o [1]
+_PrintfTiny              0x800'127f  0x11c  Code  Gb  xprintftiny.o [2]
+_SProut                  0x800'0fd3    0xa  Code  Gb  xsprout.o [2]
+__NVIC_SetPriority       0x800'1435   0x1e  Code  Lc  main.o [1]
+__NVIC_SystemReset       0x800'0e45   0x1a  Code  Lc  flashLoader.o [1]
+__aeabi_memclr           0x800'139d         Code  Gb  ABImemclr.o [3]
+__aeabi_memclr4          0x800'13a5         Code  Gb  ABImemclr4.o [3]
+__cmain                  0x800'21f9         Code  Gb  cmain.o [3]
+__exit                   0x800'2229         Code  Gb  XXexit.o [3]
+__iar_Memset4_word       0x800'1949         Code  Gb  ABImemset48.o [3]
+__iar_Memset8_word       0x800'1949         Code  Gb  ABImemset48.o [3]
+__iar_Strchr             0x800'1251         Code  Gb  strchr.o [3]
+__iar_data_init3         0x800'2191   0x28  Code  Gb  data_init.o [3]
+__iar_packbits_init_single3
+                         0x800'2129   0x38  Code  Gb  packbits_init_single.o [3]
+__iar_program_start      0x800'2245         Code  Gb  cstartup_M.o [3]
+__iar_small_Memcpy       0x800'0fe1         Code  Gb  ABImemcpy_small.o [3]
+__iar_small_Memset       0x800'1935         Code  Gb  ABImemset_small.o [3]
+__iar_small_Memset_word
+                         0x800'1935         Code  Gb  ABImemset_small.o [3]
+__iar_small_memcpy       0x800'0fdd         Code  Gb  ABImemcpy_small.o [3]
+__iar_small_memcpy4      0x800'0fdd         Code  Gb  ABImemcpy_small.o [3]
+__iar_small_memcpy8      0x800'0fdd         Code  Gb  ABImemcpy_small.o [3]
+__iar_small_memmove      0x800'0ff5         Code  Gb  ABImemmove_small.o [3]
+__iar_small_memmove4     0x800'0ff5         Code  Gb  ABImemmove_small.o [3]
+__iar_small_memmove8     0x800'0ff5         Code  Gb  ABImemmove_small.o [3]
+__iar_small_memset       0x800'1935         Code  Gb  ABImemset_small.o [3]
+__iar_small_strlen       0x800'0e19         Code  Gb  strlen_small.o [3]
+__iar_small_strncpy      0x800'1415         Code  Gb  strncpy_small.o [3]
+__iar_zero_init3         0x800'0ddf   0x3a  Code  Gb  zero_init3.o [3]
+__vector_table           0x800'0000         Data  Gb  startup_stm32g431xx.o [1]
+_call_main               0x800'2205         Code  Gb  cmain.o [3]
+_exit                    0x800'221d         Code  Gb  cexit.o [3]
+_main                    0x800'2213         Code  Gb  cmain.o [3]
+ch_OK                    0x800'0dbc    0x4  Data  Gb  sim908.o [1]
+cmd_init                 0x800'02fd   0x10  Code  Gb  sim908.o [1]
+cmd_routine              0x800'02a5   0x58  Code  Gb  sim908.o [1]
+command                 0x2000'0550   0x40  Data  Gb  sim908.o [1]
+connected_ID            0x2000'04fc    0xc  Data  Gb  sim908.o [1]
+data_flash_init          0x800'0edd   0x14  Code  Gb  flashLoader.o [1]
+exit                     0x800'2217    0x4  Code  Gb  exit.o [2]
+exitWithError            0x800'0ef1    0xa  Code  Gb  flashLoader.o [1]
+exitWithSuccess          0x800'0efb    0x6  Code  Gb  flashLoader.o [1]
+fflash                   0x800'1055    0xa  Code  Gb  lineCoder.o [1]
+fflash_data              0x800'105f    0xe  Code  Gb  lineCoder.o [1]
+flash_store              0x800'0e5f   0x7e  Code  Gb  flashLoader.o [1]
+gpio_conf                0x800'01d9    0xa  Code  Gb  sim908.o [1]
+hex_from_char            0x800'13c7   0x2a  Code  Gb  utiles.o [1]
+hex_from_string          0x800'13f1   0x24  Code  Gb  utiles.o [1]
+isHex                    0x800'13ab   0x1c  Code  Gb  utiles.o [1]
+k                       0x2000'0508    0x4  Data  Gb  sim908.o [1]
+led                     0x2000'02f0    0xc  Data  Gb  main.o [1]
+machine                 0x2000'0030  0x2c0  Data  Gb  main.o [1]
+machineDecDelay          0x800'1c15   0x36  Code  Gb  machine.o [1]
+machineDelay             0x800'1c55    0xe  Code  Gb  machine.o [1]
+machineInit              0x800'1bf5   0x20  Code  Gb  machine.o [1]
+main                     0x800'1471  0x2a8  Code  Gb  main.o [1]
+msCounter               0x2000'05c0    0x2  Data  Gb  machine.o [1]
+msg_lenght              0x2000'050c    0x4  Data  Gb  sim908.o [1]
+openSim908               0x800'1865   0x18  Code  Gb  main.o [1]
+out                      0x800'1267   0x18  Code  Lc  xprintftiny.o [2]
+pFlash                  0x2000'000c   0x20  Data  Gb  stm32g4xx_hal_flash.o [1]
+sim908DecDelay           0x800'099d   0x22  Code  Gb  sim908.o [1]
+sim908_init              0x800'0949   0x34  Code  Gb  sim908.o [1]
+sim908_receiveChar       0x800'0211   0x8a  Code  Gb  sim908.o [1]
+sim908_send              0x800'097d   0x20  Code  Gb  sim908.o [1]
+sim908_setFtpConfig      0x800'09bf  0x132  Code  Gb  sim908.o [1]
+sprintf                  0x800'1015   0x40  Code  Gb  sprintf.o [2]
+strcat                   0x800'0dc1   0x1e  Code  Gb  strcat.o [2]
+strchr                   0x800'1251         Code  Gb  strchr.o [3]
+strcmp                   0x800'0fc1         Code  Gb  strcmp.o [3]
+strcpy                   0x800'0e2d         Code  Gb  strcpy.o [3]
+strstr                   0x800'0f25   0x2c  Code  Gb  strstr.o [2]
+supp_flash               0x800'121b   0x28  Code  Gb  lineCoder.o [1]
+test_routine             0x800'030d  0x5b8  Code  Gb  sim908.o [1]
+tmp                     0x2000'05b8    0x8  Data  Gb  main.o [1]
+usart_send               0x800'01e3   0x2e  Code  Gb  sim908.o [1]
+uwTick                  0x2000'0000    0x4  Data  Gb  stm32g4xx_hal.o [1]
+uwTickFreq              0x2000'0008    0x4  Data  Gb  stm32g4xx_hal.o [1]
+uwTickPrio              0x2000'0004    0x4  Data  Gb  stm32g4xx_hal.o [1]
+
+
+[1] = C:\Users\User\Desktop\projet0\wissem\EWARM\IAP_G4\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+
+  8'708 bytes of readonly  code memory
+    106 bytes of readonly  data memory
+  2'498 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
